@@ -6,10 +6,10 @@ function Books() {
     const [books, setBooks] = useState(false);
     const [data, setData] = useState('');
     useEffect(() => {
-        getBoardgames();
+        getBooks();
     }, []);
 
-    function getBoardgames() {
+    function getBooks() {
         axios
             .get("api/books")
             .then(data => setBooks(data.data))
@@ -34,7 +34,7 @@ function Books() {
             })
             .then(data => {
                 alert(data);
-                getBoardgames();
+                getBooks();
             });
     }
     function deleteMerchant() {
@@ -47,19 +47,19 @@ function Books() {
             })
             .then(data => {
                 alert(data);
-                getBoardgames();
+                getBooks();
             });
     }
     return (
 
         <div>
-            <h1>Boardgames</h1>
-            <DataTable data={boardgames} />
+            <h1>Books</h1>
+            <DataTable data={books} />
         </div>
 
     );
 }
-export default Boardgame;
+export default Books;
 
 // <br />
 // <button onClick={createBoardgame}>Add boardgames</button>
