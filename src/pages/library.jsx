@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import DataTable from './tables/library_table.jsx';
+import DataTable from '../components/tables/library_table.jsx';
 import axios from 'axios'
 
 function Books() {

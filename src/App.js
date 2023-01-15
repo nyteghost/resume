@@ -12,6 +12,7 @@ import About from "./pages/about";
 import Index from "./pages/index";
 import Apis from "./pages/apis";
 import Databases from "./pages/databases";
+import Pokedex from "./pages/pokedex";
 
 function App() {
   return (
@@ -24,8 +25,9 @@ function App() {
             <Route path="/Resume" element={<Resume/>} />
             <Route path="/Projects" element={<Projects/>} />
             <Route path="/About" element={<About/>} />
-            <Route path="/Apis" element={<Apis/>} />
             <Route path="/Databases" element={<Databases/>} />
+            <Route path="/Pokedex" element={<Pokedex/>} />
+
           </Routes>
         </Router>
       </>
