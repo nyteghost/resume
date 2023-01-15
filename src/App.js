@@ -13,6 +13,7 @@ import Index from "./pages/index";
 import Apis from "./pages/apis";
 import Databases from "./pages/databases";
 import Pokedex from "./pages/pokedex";
+import StageComp from "./pages/stage";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path="/About" element={<About/>} />
             <Route path="/Databases" element={<Databases/>} />
             <Route path="/Pokedex" element={<Pokedex/>} />
+            <Route path="/Stage" element={<StageComp/>} />
 
           </Routes>
         </Router>
