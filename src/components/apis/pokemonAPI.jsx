@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export const fetchdata = async (pokemon)=>{
     try{
-        const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
+        const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon.toLowerCase()}`);
         return response.data
     }
     catch (error) {

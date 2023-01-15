@@ -6,6 +6,7 @@ import Box from '@mui/material/Box'
 import { TextField } from '@mui/material';
 import { inputLabelClasses } from "@mui/material/InputLabel";
 import {fetchdata} from "../components/apis/pokemonAPI";
+import TestStuff from "../components/pokemonWait";
 
 const  SearchAssetLoc = (props) => {
     const assetIDRef = useRef();
@@ -49,17 +50,19 @@ const  SearchAssetLoc = (props) => {
         setIsLoading(true);
         data = assetIDRef.current.value;
         parentToChild(data);
-        setIsLoading(false)
         fetchdata(data).then(r => setData(r))
         PokeImage(Data)
+        setIsLoading(false)
+
     }
     const onDown = data => {
         setIsLoading(true);
         data = assetIDRef.current.value;
         parentToChild(data);
-        setIsLoading(false)
         fetchdata(data).then(r => setData(r))
         PokeImage(Data)
+        setIsLoading(false)
+
     }
 
     return (
@@ -96,33 +99,45 @@ const  SearchAssetLoc = (props) => {
                         }}
                     />
                     <Box textAlign='center'>
-                        <Button size="small" type="submit" color="primary" variant="round" disabled={isLoading} onMouseDown={()=>{onDown()}}>
+                        <Button size="small" type="submit" color="primary" variant="round" disabled={isLoading} >
                             Submit
                         </Button>
                     </Box>
                 </form>
 
             </Box>
-            <Box
-                sx ={{
-                    marginX: 70,
-                    marginY: 0,
-                    border: '1px'
-                    }}
-                bgcolor="lightgreen"
-                display="flex"
-                justifyContent="center"
-                alignItems="center"
-            >
-                { Data ? Data.name : null }
-                <br />
-                { Data ? console.log(Data) : null }
-                { pokeImg ? <img src = {pokeImg}
-                                 alt="pokemon"
-                                 width="250"
-                                 height="250"
-                /> : null }
-            </Box>
+            {/*<Box*/}
+            {/*    display="flex"*/}
+            {/*    justifyContent="center"*/}
+            {/*    alignItems="center"*/}
+            {/*>*/}
+            {/*    { Data ? Data.name : null }*/}
+            {/*</Box>*/}
+            {/*<Box*/}
+            {/*    sx ={{*/}
+            {/*        marginX: 70,*/}
+            {/*        marginY: 0,*/}
+            {/*        border: '1px'*/}
+            {/*        }}*/}
+            {/*    bgcolor="lightgreen"*/}
+            {/*    display="flex"*/}
+            {/*    justifyContent="center"*/}
+            {/*    alignItems="center"*/}
+            {/*>*/}
+            {/*    <br />*/}
+            {/*    { Data ? console.log(Data) : null }*/}
+            {/*    { pokeImg ? <img src = {pokeImg}*/}
+            {/*                     alt="pokemon"*/}
+            {/*                     width="250"*/}
+            {/*                     height="250"*/}
+            {/*    /> : null }*/}
+            {/*    {<img src = {pokeImg}*/}
+            {/*          alt="pokemon"*/}
+            {/*          width="250"*/}
+            {/*          height="250"*/}
+            {/*    />}*/}
+            {/*</Box>*/}
+            <TestStuff Data={Data}/>
         </>
     );
 }
