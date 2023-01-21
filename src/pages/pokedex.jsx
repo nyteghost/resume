@@ -68,7 +68,9 @@ const  SearchPokemon = (props) => {
 
     return (
         <>
-            <Container
+            <Box display="flex"
+                 justifyContent="center"
+                 alignItems="center"
             >
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <ErrorMessage errors={errors} name="singleErrorInput" />
@@ -103,7 +105,7 @@ const  SearchPokemon = (props) => {
                         </Button>
                     </Box>
                 </form>
-            </Container>
+            </Box>
 
             { Data ? <PokeDisplay Data={Data}/> : null }
 

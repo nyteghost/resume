@@ -48,8 +48,14 @@ export default class ResumeDeploy extends Component {
     render() {
         return (
             <>
-
-
+                <Box display="flex"
+                     justifyContent="center"
+                     alignItems="center">
+                    <div>
+                        <h3>Resume</h3>
+                        <iframe src="https://registry.jsonresume.org/nyteghost?theme=Kendall" width={1000} height={1000} sandbox='allow-scripts allow-modal' ></iframe>
+                    </div>
+                </Box>
             </>
         )
      console.log("resume");
