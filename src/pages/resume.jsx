@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import Container from '@mui/material/Container';
 import CssBaseline from "@mui/material/CssBaseline";
+import Box from "@mui/material/Box";
+import Typography from '@mui/material/Typography';
 
+const Data = require('../components/jsonresume.json');
 function About() {
     return(
         <>
@@ -18,13 +21,11 @@ function About() {
 function Experience() {
     return(
         <>
+
             <CssBaseline />
-            <Container maxWidth="sm">
-                <h1>Experience</h1>
-                <br />
-                <div>Hello</div>
-                <br />
-            </Container>
+            <Box maxWidth="sm">
+
+            </Box>
         </>
     )
 }
@@ -41,36 +42,14 @@ function Education() {
         </>
     )
 }
-export default class Resume extends Component {
+export default class ResumeDeploy extends Component {
 
 
     render() {
         return (
             <>
-                <div className="App"
-                     style={{
-                         display: 'flex',
-                         justifyContent: 'center',
-                         alignItems: 'center',
-                     }}>
-                    <About></About >
-                </div>
-                <div className="App"
-                     style={{
-                         display: 'flex',
-                         justifyContent: 'center',
-                         alignItems: 'center',
-                     }}>
-                    <Experience></Experience>
-                </div>
-                <div className="App"
-                     style={{
-                         display: 'flex',
-                         justifyContent: 'center',
-                         alignItems: 'center',
-                     }}>
-                    <Education></Education>
-                </div>
+
+
             </>
         )
      console.log("resume");

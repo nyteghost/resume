@@ -6,9 +6,10 @@ import Box from '@mui/material/Box'
 import { TextField } from '@mui/material';
 import { inputLabelClasses } from "@mui/material/InputLabel";
 import {fetchdata} from "../components/apis/pokemonAPI";
-import TestStuff from "../components/pokemonWait";
+import PokeDisplay from "../components/pokemonDisplay";
+import Container from '@mui/material/Container';
 
-const  SearchAssetLoc = (props) => {
+const  SearchPokemon = (props) => {
     const assetIDRef = useRef();
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [isLoading, setIsLoading] = useState(false);
@@ -67,14 +68,12 @@ const  SearchAssetLoc = (props) => {
 
     return (
         <>
-            <Box sx={{
-                margin: 4,
-                border: '1px'
-            }}
+            <Container
             >
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <ErrorMessage errors={errors} name="singleErrorInput" />
                     <TextField
+                        sx={{ textAlign: 'center' }}
                         required
                         fullWidth
                         id="outlined-required"
@@ -92,7 +91,7 @@ const  SearchAssetLoc = (props) => {
                                 color: "",
                                 [`&.${inputLabelClasses.shrink}`]: {
                                     // set the color of the label when shrinked (usually when the TextField is focused)
-                                    color: "orange",
+                                    color: "Black",
                                     marginTop: -3
                                 }
                             }
@@ -104,42 +103,12 @@ const  SearchAssetLoc = (props) => {
                         </Button>
                     </Box>
                 </form>
+            </Container>
 
-            </Box>
-            {/*<Box*/}
-            {/*    display="flex"*/}
-            {/*    justifyContent="center"*/}
-            {/*    alignItems="center"*/}
-            {/*>*/}
-            {/*    { Data ? Data.name : null }*/}
-            {/*</Box>*/}
-            {/*<Box*/}
-            {/*    sx ={{*/}
-            {/*        marginX: 70,*/}
-            {/*        marginY: 0,*/}
-            {/*        border: '1px'*/}
-            {/*        }}*/}
-            {/*    bgcolor="lightgreen"*/}
-            {/*    display="flex"*/}
-            {/*    justifyContent="center"*/}
-            {/*    alignItems="center"*/}
-            {/*>*/}
-            {/*    <br />*/}
-            {/*    { Data ? console.log(Data) : null }*/}
-            {/*    { pokeImg ? <img src = {pokeImg}*/}
-            {/*                     alt="pokemon"*/}
-            {/*                     width="250"*/}
-            {/*                     height="250"*/}
-            {/*    /> : null }*/}
-            {/*    {<img src = {pokeImg}*/}
-            {/*          alt="pokemon"*/}
-            {/*          width="250"*/}
-            {/*          height="250"*/}
-            {/*    />}*/}
-            {/*</Box>*/}
-            <TestStuff Data={Data}/>
+            { Data ? <PokeDisplay Data={Data}/> : null }
+
         </>
     );
 }
 
-export default SearchAssetLoc;
+export default SearchPokemon;

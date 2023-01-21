@@ -14,6 +14,7 @@ import Apis from "./pages/apis";
 import Databases from "./pages/databases";
 import Pokedex from "./pages/pokedex";
 import StageComp from "./pages/stage";
+import ResumeDeploy from "./pages/resume";
 
 function App() {
   return (
@@ -23,7 +24,8 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/" element={<Index/>} />
-            <Route path="/Resume" element={<Resume/>} />
+            <Route path="/Resume" element={<ResumeDeploy/>} />
+            {/*https://registry.jsonresume.org/nyteghost?theme=Kendall*/}
             <Route path="/Projects" element={<Projects/>} />
             <Route path="/About" element={<About/>} />
             <Route path="/Databases" element={<Databases/>} />
